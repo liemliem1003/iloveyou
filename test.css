@@ -1,0 +1,60 @@
+html{
+	position: relative;
+	background: black;
+	width: 100%;
+	height: 100%;
+}
+.bullet{
+	height: 60px;
+	bottom: 0px;
+	left: 50%;
+	position: absolute;
+	width: 6px;
+	background: linear-gradient(rgba(95, 145, 255, 1), rgba(0, 0, 255, 0));
+	border-radius: 999px;
+	filter: drop-shadow(0 0 6px rgba(105, 155, 255, 1));
+	animation-name: fire;
+  	animation-duration: 3s;
+  	animation-timing-function: linear;
+}
+@keyframes fire {
+  0% {
+  	bottom:0px;
+  }
+  30% {
+	height: 60px;
+  }
+  70% {
+  	opacity: 1;
+  }
+  100% {
+  	bottom:80%;
+  	height: 6px;
+  	opacity: 0
+  }
+}
+.fireworks {
+	width: 100px;
+	height: 100px;
+}
+polygon {
+	fill: white;
+}
+svg{
+	width: 30px;
+
+}
+.particular{
+	position: absolute;
+	top: 50%;
+	width: 8px;
+	height: 8px;
+	clip-path: circle();
+	
+}
+.line{
+	position: absolute;
+	background: radial-gradient(white, red);
+	height: 50px;
+	width: 5px;
+}
