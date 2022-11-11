@@ -1,10 +1,13 @@
-html{
+html,
+body {
 	position: relative;
 	background: black;
 	width: 100%;
 	height: 100%;
 }
-.bullet{
+
+.bullet {
+	display: none;
 	height: 60px;
 	bottom: 0px;
 	left: 50%;
@@ -13,48 +16,138 @@ html{
 	background: linear-gradient(rgba(95, 145, 255, 1), rgba(0, 0, 255, 0));
 	border-radius: 999px;
 	filter: drop-shadow(0 0 6px rgba(105, 155, 255, 1));
-	animation-name: fire;
+	/* animation-name: fire;
   	animation-duration: 3s;
-  	animation-timing-function: linear;
+  	animation-timing-function: linear; */
 }
+
 @keyframes fire {
-  0% {
-  	bottom:0px;
-  }
-  30% {
-	height: 60px;
-  }
-  70% {
-  	opacity: 1;
-  }
-  100% {
-  	bottom:80%;
-  	height: 6px;
-  	opacity: 0
-  }
+	0% {
+		bottom: 0px;
+	}
+
+	30% {
+		height: 60px;
+	}
+
+	70% {
+		opacity: 1;
+	}
+
+	100% {
+		bottom: 80%;
+		height: 6px;
+		opacity: 0
+	}
 }
+
 .fireworks {
-	width: 100px;
-	height: 100px;
+	/* position: absolute; */
+	width: 100%;
+	top: 20%;
+	left: 50%;
 }
+
 polygon {
 	fill: white;
 }
-svg{
-	width: 30px;
 
+svg {
+	width: 30px;
+	top: 20%;
+	left: 50%;
+	position: absolute;
+	display: none;
 }
-.particular{
+
+.particular {
 	position: absolute;
 	top: 50%;
 	width: 8px;
 	height: 8px;
 	clip-path: circle();
-	
+
 }
-.line{
+
+.line {
 	position: absolute;
 	background: radial-gradient(white, red);
 	height: 50px;
 	width: 5px;
+}
+
+.countdown::after {
+	content: '';
+	font-family: 'Courier New', Courier, monospace;
+	color: red;
+	position: absolute;
+	left: calc(50% - 60px);
+	top: calc(50% - 113px);
+	font-size: 200px;
+	animation-name: countdown;
+	animation-duration: 3.5s;
+	opacity: 0;
+}
+
+@keyframes countdown {
+	0% {
+		opacity: 1;
+		content: '3';
+	}
+
+	33% {
+		content: '2';
+	}
+
+	66% {
+		content: '1';
+	}
+
+	99% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+.heart {
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	background: red;
+	/* clip-path: circle(); */
+	border-radius: 999px;
+	/* animation: heart 100s infinite; */
+	box-shadow: 1px 1px lightblue;
+}
+.heart::after{
+	width: 10px;
+	height: 10px;
+	background: red;
+}
+@keyframes heart {
+	0% {
+		top: 500px;
+		left: 500px;
+	}
+	25%{
+		top: 200px;
+		left: 400px;
+	}
+	50%{
+		transform:rotate(0deg);
+		top:200px;
+		left: 500px;
+	}
+	75%{
+		transform:rotate(0deg);
+		top:200px;
+		left: 600px;
+	}
+	100%{
+		top: 500px;
+		left: 500px;
+	}
 }
